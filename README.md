@@ -61,3 +61,32 @@ This repository uses GitHub's LaTeX rendering for equations.
 
 **Inline example:**
 
+
+**Block equation example:**
+
+---
+
+## 📁 Folder Structure
+
+
+Each folder contains a Markdown file summarizing the corresponding lecture or topic.
+
+---
+
+## 🎯 Purpose of This Repository
+
+This is a **learning-focused** repository, not a full code implementation.  
+Over time, I may add:
+- Python implementations of RL algorithms  
+- Jupyter notebooks with experiments  
+- Visualizations of policies, value functions, and learning curves  
+
+For now, the main purpose is to **learn, summarize, and understand** RL deeply.
+
+---
+
+## 📝 License
+
+Feel free to reference, fork, or use these notes for learning purposes.
+
+
