@@ -32,3 +32,86 @@ This course covers:
 
 This file contains my notes as I progress through the course.
 
+
+📂 01-rewards / rewards.md
+Rewards in Reinforcement Learning
+1. What is a Reward?
+A reward 
+R
+t
+R 
+t
+​	
+  is a single numeric value given to the agent at time step t.
+It tells the agent how good or bad its last action was.
+Positive → desirable behavior
+Negative → undesirable behavior
+Zero → neutral outcome
+Rewards are the only feedback signal the agent receives.
+2. Time Steps
+RL operates in discrete time steps:
+state → action → reward → next state
+Continuous-time RL exists, but is not considered in this course.
+3. Types of Tasks
+Episodic Tasks
+Tasks with a clear beginning and end.
+Examples: games, maze solving.
+Continuous Tasks
+Tasks that run indefinitely.
+Examples: datacenter cooling, autonomous driving during long operation.
+4. Examples of Reward Design
+Autonomous Agents (cars, drones, robots)
+following the correct trajectory
+wasting time
+---- crashing
+Games
+winning
+losing
+scoring points
+HVAC / Energy Optimization
+energy consumption
+user discomfort
+Trading
+profit
+loss
+Recommender Systems
+click or engagement
+ignored recommendation
+Chatbots
+user satisfaction
+user frustration
+Each environment defines its own reward function.
+5. Cumulative Reward
+The agent’s objective is to maximize cumulative reward, the total sum of rewards across time:
+G
+=
+∑
+t
+R
+t
+G= 
+t
+∑
+​	
+ R 
+t
+​	
+ 
+In episodic tasks: cumulative reward is computed per episode
+In continuous tasks: reward is accumulated over a defined (possibly rolling) horizon
+6. Reward Hypothesis
+RL is based on the reward hypothesis:
+All goals can be expressed as the maximization of expected cumulative reward.
+This principle guides all RL design.
+7. Sequential Decision Making
+Actions influence not only the immediate reward but also future rewards.
+Long-term consequences matter
+Rewards may be delayed
+Sometimes short-term penalties lead to greater long-term gains
+Example: a chess sacrifice that leads to a winning strategy later.
+Summary
+Rewards define what the agent should achieve.
+Cumulative reward defines how the agent judges success.
+Sequential decisions link present actions to future outcomes.
+
+
