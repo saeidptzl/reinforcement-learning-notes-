@@ -1,0 +1,18 @@
+# Multi-Armed Bandits (MAB)
+
+## Problem statement
+Choose among K actions (arms). Each arm \(a\) yields reward from an unknown distribution. Goal: maximize cumulative reward.
+
+## Key metrics
+- **Regret:** difference between optimal expected reward and obtained reward.
+- **Exploration vs Exploitation**
+
+## Algorithms
+- **ε-greedy** (incremental update):
+  - Update: \(Q_{n+1} = Q_n + \frac{1}{n+1}(R_{n+1} - Q_n)\)
+- **Upper Confidence Bound (UCB)**
+- **Thompson Sampling**
+
+## Practical tips
+- Start with ε decay: ε_t = ε0 / (1 + decay * t)
+- Track cumulative regret plots
