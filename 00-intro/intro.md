@@ -115,3 +115,251 @@ Cumulative reward defines how the agent judges success.
 Sequential decisions link present actions to future outcomes.
 
 
+Agent, Environment, Observations, and Components
+1. Agent–Environment Loop
+At each time step 
+t
+t:
+Agent
+Observes the state 
+S
+t
+S 
+t
+​	
+ 
+Chooses an action 
+A
+t
+A 
+t
+​	
+ 
+Environment
+Given 
+(
+S
+t
+,
+A
+t
+)
+(S 
+t
+​	
+ ,A 
+t
+​	
+ ):
+Returns a reward 
+R
+t
++
+1
+R 
+t+1
+​	
+ 
+Produces the next state 
+S
+t
++
+1
+S 
+t+1
+​	
+ 
+This forms the fundamental RL interaction loop.
+2. Episodes
+An episode is a full sequence of transitions:
+S
+0
+,
+A
+0
+,
+R
+1
+,
+S
+1
+,
+A
+1
+,
+R
+2
+,
+S
+2
+,
+…
+S 
+0
+​	
+ ,A 
+0
+​	
+ ,R 
+1
+​	
+ ,S 
+1
+​	
+ ,A 
+1
+​	
+ ,R 
+2
+​	
+ ,S 
+2
+​	
+ ,…
+Training typically involves many episodes.
+3. Observations and History
+Fully Observable Environments
+S
+t
++
+1
+=
+O
+t
++
+1
+S 
+t+1
+​	
+ =O 
+t+1
+​	
+ 
+The observation equals the underlying state.
+Partially Observable Environments
+The agent only sees an observation.
+It must infer the state from history:
+H
+t
+=
+O
+1
+,
+R
+1
+,
+A
+1
+,
+…
+,
+O
+t
+,
+R
+t
+H 
+t
+​	
+ =O 
+1
+​	
+ ,R 
+1
+​	
+ ,A 
+1
+​	
+ ,…,O 
+t
+​	
+ ,R 
+t
+​	
+ 
+State estimation:
+S
+t
+=
+f
+(
+H
+t
+)
+S 
+t
+​	
+ =f(H 
+t
+​	
+ )
+This is essential in tasks like card games, robotics with sensor noise, etc.
+4. Components of an RL Agent
+Policy (always present)
+Maps states to actions.
+Goal of RL: find the policy that maximizes expected cumulative reward.
+Deterministic:
+a
+=
+π
+(
+s
+)
+a=π(s)
+Stochastic:
+π
+(
+a
+∣
+s
+)
+=
+P
+[
+A
+t
+=
+a
+∣
+S
+t
+=
+s
+]
+π(a∣s)=P[A 
+t
+​	
+ =a∣S 
+t
+​	
+ =s]
+Value Function (optional)
+Measures how good a state is under a policy.
+Q-Value Function (optional)
+Measures how good a state–action pair is.
+Q
+(
+s
+,
+a
+)
+=
+expected return starting in 
+s
+ taking action 
+a
+Q(s,a)=expected return starting in s taking action a
+Key concept for Q-learning and deep Q-networks.
+Model (optional)
+The agent’s predicted model of the environment.
+Provides estimates of:
+next state
+reward
+Used in model-based RL.
+Summary
+The agent chooses actions; the environment provides rewards and next states.
+Episodes are sequences of interactions.
+Observations may or may not fully reveal the state.
+Policies, value functions, Q-values, and models are the core building blocks of RL agents.
+
+
