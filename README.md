@@ -1,78 +1,98 @@
+# 📘 Reinforcement Learning Notes
 
+A complete, lecture-by-lecture reference for fundamental and advanced concepts in Reinforcement Learning.
 
-# Reinforcement Learning Notes
-
-This repository contains my structured notes while studying **Reinforcement Learning (RL)**.  
-The goal of this project is to document my learning progress, summarize important concepts, and create a clean chapter-by-chapter reference for the fundamental and advanced topics in RL.
-
-All notes are written in **Markdown** and include mathematical formulas using **LaTeX** syntax.
+All notes are written in **Markdown** and include mathematical formulas using **LaTeX**.
 
 ---
 
-## 📚 Table of Contents
+# 📚 Table of Contents
 
-### 00 — Introduction
+## 00 — Introduction
 - [Introduction to RL](00-intro/intro.md)
 
-### 01 — Multi-Armed Bandits
+## 01 — Multi-Armed Bandits
 - [Bandits](01-bandits/bandits.md)
 
-### 02 — Markov Decision Processes (MDPs)
+## 02 — Markov Decision Processes (MDPs)
 - [MDP Definitions & Concepts](02-mdp/mdp.md)
 
-### 03 — Bellman Equations
-- [Bellman Expectation & Optimality Equations](03-bellman/bellman-equations.md)
+## 03 — Bellman Equations
+- [Bellman Expectation & Optimality Equations](03-bellman/bellman.md)
 
-### 04 — Dynamic Programming
-- [DP for MDPs + Monte Carlo Overview](04-dynamic-programming/dp-for-mdp-and-monte-carlo.md)
+## 04 — Dynamic Programming
+- [Policy Evaluation, Improvement & Value Iteration](04-dp/dp.md)
 
-### 05 — Monte Carlo Methods
-- [Monte Carlo Evaluation & Control](05-monte-carlo/monte-carlo.md)
+## 05 — DP for MDPs + Monte Carlo Overview
+- [DP + Monte Carlo Concepts](05-dp-mc/dp-mc.md)
 
-### 06 — Off-Policy MC & TD
-- [Off-Policy MC & Temporal Difference](06-offpolicy-mc-td/offpolicy-mc-and-td.md)
+## 06 — Monte Carlo Methods
+- [Monte Carlo Methods](06-monte-carlo/mc.md)
 
-### 07 — TD Learning
-- [TD(0), SARSA, Q-Learning](07-td-learning/td-learning.md)
+## 07 — Off-policy Monte Carlo & Temporal Difference Learning
+- [Off-policy MC + TD Learning](07-offpolicy-td/offpolicy-td.md)
 
-### 08 — n-Step Bootstrapping
-- [n-step Returns & Bootstrapping](08-n-step-bootstrapping/n-step.md)
+## 08 — TD Learning
+- [Temporal Difference Learning](08-td/td.md)
 
-### 09 — Eligibility Traces
-- [TD(λ) & Eligibility Traces](09-lambda-eligibility-traces/lambda-traces.md)
+## 09 — TD Learning & n-step Bootstrapping
+- [n-step TD](09-td-nstep/td-nstep.md)
 
-### 10 — Value Function Approximation + Policy Gradient Intro
-- [VFA & Basic Policy Gradient](10-value-function-approx/vfa-and-policy-gradient.md)
+## 10 — TD-lambda & Eligibility Traces
+- [TD-lambda](10-td-lambda/td-lambda.md)
 
-### 11 — Policy Gradient Methods
-- [REINFORCE, Actor-Critic, Policy Gradient Algorithms](11-policy-gradient/policy-gradient.md)
+## 11 — Value Function Approximation
+- [Value Function Approximation](11-vfa/vfa.md)
 
-### 12 — Deep Reinforcement Learning
-- [DQN, Deep Actor-Critic, PPO, etc.](12-deep-rl/deep-rl.md)
+## 12 — Policy Gradient Methods
+- [Policy Gradient + REINFORCE](12-policy-gradient/policy-gradient.md)
 
-### 13 — Project Template
-- [Final Project Proposal](13-project/project-proposal.md)
+## 13 — Deep Reinforcement Learning
+- [Deep RL (DQN, PPO, A2C, A3C)](13-deep-rl/deep-rl.md)
 
----
-
-## 🧮 Math in Markdown
-
-This repository uses GitHub's LaTeX rendering for equations.
+## 14 — Final Project
+- [Snake RL Project](14-project/project.md)
 
 ---
 
-## 🎯 Purpose of This Repository
+# 🎯 About This Repository
+This repository is designed to document the path from classical RL foundations to modern deep reinforcement learning.  
+Each chapter corresponds to one lecture or concept block.
 
-This is a **learning-focused** repository, not a full code implementation.  
-Over time, I may add:
-- Visualizations of policies, value functions, and learning curves  
+You can use this as:
 
-For now, the main purpose is to **learn, summarize, and understand** RL deeply.
+- A study companion  
+- A revision guide  
+- A project reference  
+- A personal RL knowledge base  
 
 ---
 
-## 📝 License
+# 🧠 Subjects Covered
 
-Feel free to reference, fork, or use these notes for learning purposes.
+- k-armed bandits  
+- Markov Decision Processes  
+- Bellman equations  
+- Dynamic programming  
+- Monte Carlo methods  
+- TD learning  
+- Eligibility traces (TD-λ)  
+- Value function approximation  
+- Policy gradient methods  
+- Actor-critic methods  
+- Deep reinforcement learning (DQN, PPO, etc.)  
+- Final project: Snake RL  
 
+---
 
+# 🚀 How to Use This Repo
+
+Start from folder `00-intro` and move forward.  
+The structure follows the same order as a typical RL university course.
+
+Each folder contains:
+- Clean markdown explanations  
+- LaTeX formulas  
+- Examples where needed  
+
+Enjoy your RL journey.
