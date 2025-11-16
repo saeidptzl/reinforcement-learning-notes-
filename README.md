@@ -1,35 +1,63 @@
 # reinforcement-learning-notes
 
-# Introduction to Reinforcement Learning
+# Reinforcement Learning Notes
 
-Reinforcement Learning (RL) is a framework for learning how agents should act in an environment in order to maximize long-term reward. RL is different from supervised and unsupervised learning because the agent learns from **interaction**, not from labeled datasets.
+This repository contains my structured notes while studying **Reinforcement Learning (RL)**.  
+The goal of this project is to document my learning progress, summarize important concepts, and create a clean chapter-by-chapter reference for the fundamental and advanced topics in RL.
 
-## Key Concepts
-- **Agent:** The learner or decision maker.
-- **Environment:** Everything the agent interacts with.
-- **State (S):** A representation of the current situation.
-- **Action (A):** A decision taken by the agent.
-- **Reward (R):** Feedback signal that indicates how good an action was.
-- **Policy (π):** A mapping from states to actions.
-- **Return (G):** The total accumulated reward over time.
+All notes are written in **Markdown** and include mathematical formulas using **LaTeX** syntax.
 
-## Objective
-The main objective in RL is to learn a policy π that maximizes the expected return:
+---
 
-$$
-G_t = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1}
-$$
+## 📚 Table of Contents
 
-where \( \gamma \in [0, 1] \) is the discount factor.
+### 00 — Introduction
+- [Introduction to RL](00-intro/intro.md)
 
-## What You Will Learn
-This course covers:
-- Markov Decision Processes (MDPs)
-- Bellman Equations
-- Dynamic Programming
-- Monte-Carlo Learning
-- Temporal-Difference Learning
-- Policy Gradient Methods
-- Deep Reinforcement Learning
+### 01 — Multi-Armed Bandits
+- [Bandits](01-bandits/bandits.md)
 
-This file contains my notes as I progress through the course.
+### 02 — Markov Decision Processes (MDPs)
+- [MDP Definitions & Concepts](02-mdp/mdp.md)
+
+### 03 — Bellman Equations
+- [Bellman Expectation & Optimality Equations](03-bellman/bellman-equations.md)
+
+### 04 — Dynamic Programming
+- [DP for MDPs + Monte Carlo Overview](04-dynamic-programming/dp-for-mdp-and-monte-carlo.md)
+
+### 05 — Monte Carlo Methods
+- [Monte Carlo Evaluation & Control](05-monte-carlo/monte-carlo.md)
+
+### 06 — Off-Policy MC & TD
+- [Off-Policy MC & Temporal Difference](06-offpolicy-mc-td/offpolicy-mc-and-td.md)
+
+### 07 — TD Learning
+- [TD(0), SARSA, Q-Learning](07-td-learning/td-learning.md)
+
+### 08 — n-Step Bootstrapping
+- [n-step Returns & Bootstrapping](08-n-step-bootstrapping/n-step.md)
+
+### 09 — Eligibility Traces
+- [TD(λ) & Eligibility Traces](09-lambda-eligibility-traces/lambda-traces.md)
+
+### 10 — Value Function Approximation + Policy Gradient Intro
+- [VFA & Basic Policy Gradient](10-value-function-approx/vfa-and-policy-gradient.md)
+
+### 11 — Policy Gradient Methods
+- [REINFORCE, Actor-Critic, Policy Gradient Algorithms](11-policy-gradient/policy-gradient.md)
+
+### 12 — Deep Reinforcement Learning
+- [DQN, Deep Actor-Critic, PPO, etc.](12-deep-rl/deep-rl.md)
+
+### 13 — Project Template
+- [Final Project Proposal](13-project/project-proposal.md)
+
+---
+
+## 🧮 Math in Markdown
+
+This repository uses GitHub's LaTeX rendering for equations.
+
+**Inline example:**
+
