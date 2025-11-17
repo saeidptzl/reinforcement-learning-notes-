@@ -240,4 +240,116 @@ A model is the agent’s internal representation of the environment, used to pre
 
 
 
+# Multi-Armed Bandits and RL Elements
+
+## 1. RL Elements
+
+A reinforcement learning problem contains:
+- **Agent**: the entity that selects actions.
+- **States** \( S_t \): complete descriptions of the system.
+- **Actions** \( A_t \): possible decisions the agent can take.
+- **Environment**: provides rewards and transitions the agent to the next state.
+- **Goal**: maximize cumulative reward over time.
+
+The interaction loop:
+\[
+S_t \rightarrow A_t \rightarrow R_{t+1} \rightarrow S_{t+1}
+\]
+
+---
+
+## 2. One-State Simplification
+
+In some simplified RL settings:
+- There is only one state, or the environment always returns the agent to the same state:
+\[
+S_t = S_{t+1}
+\]
+
+This reduces the problem to repeated action–reward interactions.
+
+---
+
+## 3. RL vs Multi-Armed Bandits
+
+### Full RL Episode:
+\[
+S_0, A_0, R_1, S_1, A_1, R_2, S_2, A_2, \dots
+\]
+
+### Bandit Episode:
+\[
+(S_0)\ A_t R_t
+\]
+
+Bandits have:
+- One state
+- Multiple actions
+- One reward per episode
+
+---
+
+## 4. Purpose of Multi-Armed Bandits
+
+Multi-armed bandits allow us to study:
+- Reward structures
+- Decision making under uncertainty
+- The exploration–exploitation dilemma
+
+They simplify RL to its core components.
+
+---
+
+## 5. One-Armed Bandit (Slot Machine)
+
+A single-lever machine produces a reward each time it is pulled.  
+In RL, the setting assumes many trials to understand the reward pattern.
+
+---
+
+## 6. Multi-Armed Bandits (k-Armed)
+
+The agent has:
+- \( k \) different actions (arms)
+- One state
+- Each action provides rewards following a probability distribution
+
+Goal:
+\[
+\text{maximize cumulative reward over episodes}
+\]
+
+---
+
+## 7. Applications of Bandits
+
+- Online advertising and content selection  
+- Medical treatment allocation  
+- Server/job scheduling  
+- A/B testing
+
+---
+
+## 8. Clinical Trial Example
+
+Each patient corresponds to an episode:
+- Treatment choice = action  
+- Patient outcome = reward  
+
+Illustrates the exploration–exploitation dilemma.
+
+---
+
+## 9. Action Values in Bandits
+
+Define the true value of an action:
+\[
+q_*(a) = \mathbb{E}[R_t \mid A_t = a]
+\]
+
+This is the expected reward of action \( a \).  
+The agent must estimate these values over time.
+
+
+
 
