@@ -351,5 +351,112 @@ This is the expected reward of action \( a \).
 The agent must estimate these values over time.
 
 
+# Action-Value Estimation and Exploration Strategies in k-Armed Bandits
+
+## 1. Sample-Average Action-Value Estimation
+
+The true value of an action \( q_*(a) \) is unknown.  
+It can be estimated using the sample-average method:
+
+\[
+Q_t(a) = \frac{\sum_{i=1}^{t-1} R_i \mathbf{1}_{A_i = a}}{\sum_{i=1}^{t-1} \mathbf{1}_{A_i = a}}
+\]
+
+This is the average reward obtained from action \( a \) up to time \( t \).  
+The estimate is updated every time a new reward is collected.
+
+---
+
+## 2. Clinical Trial Example
+
+- Reward = 1 if treatment is effective, 0 otherwise  
+- Initial estimates start at 0  
+- A random policy is used  
+- Over many episodes, the estimated value of each treatment converges to its true mean reward
+
+Example after 12 trials:
+- Pink: \( Q = 0.25 \)  
+- Yellow: \( Q = 0.75 \)  
+- Blue: \( Q = 0.50 \)
+
+---
+
+## 3. Greedy Policy
+
+The greedy policy selects:
+
+\[
+A_t = \arg\max_a Q_t(a)
+\]
+
+This policy exploits current knowledge but does not explore other actions.  
+It may get stuck with suboptimal actions.
+
+---
+
+## 4. Exploration vs Exploitation
+
+- **Exploration** improves long-term knowledge  
+- **Exploitation** uses current best estimates for short-term reward  
+- A balance is required to achieve optimal long-term performance
+
+---
+
+## 5. Strategies to Address the Trade-Off
+
+1. ε-greedy  
+2. Greedy with optimistic initialization  
+3. Upper Confidence Bound (UCB)  
+4. Gradient Bandit  
+
+---
+
+## 6. ε-Greedy Policy
+
+\[
+A_t = 
+\begin{cases}
+\text{greedy action} & \text{with probability } 1 - \varepsilon \\
+\text{non-greedy action} & \text{with probability } \varepsilon
+\end{cases}
+\]
+
+- \( \varepsilon \in (0,1) \)  
+- Non-greedy actions chosen uniformly  
+
+This ensures continual exploration while still favoring the best-known action.
+
+---
+
+## 7. Example: 10-Armed Bandit
+
+Setup:
+- 2000 randomly generated bandit problems  
+- Each action’s true value is drawn from \( \mathcal{N}(\mu_k, 1) \)  
+- Each \( \mu_k \) is drawn from \( \mathcal{N}(0,1) \)  
+- Performance is averaged over all 2000 problems  
+
+---
+
+## 8. Results
+
+- ε = 0 (greedy): worst performance  
+- ε = 0.01: good long-term performance  
+- ε = 0.1: best initial performance  
+
+The optimal ε depends on the reward variance and problem structure.
+
+---
+
+## 9. Long-Run Behavior
+
+After extended training (e.g., 4000 steps):
+
+- ε = 0.1 continues to perform well  
+- ε = 0.01 eventually surpasses it in average reward  
+- ε = 0 remains suboptimal  
+
+Exploration is essential for avoiding premature convergence to suboptimal actions.
+
 
 
