@@ -458,5 +458,103 @@ After extended training (e.g., 4000 steps):
 
 Exploration is essential for avoiding premature convergence to suboptimal actions.
 
+# Incremental Implementation of Action-Value Estimates
+
+## 1. Naïve Sample-Average Estimate
+
+For an action selected \( n-1 \) times, the value estimate is:
+
+\[
+Q_n = \frac{R_1 + R_2 + \dots + R_{n-1}}{n - 1}
+\]
+
+This requires storing all past rewards and recomputing the full average at each step, which is inefficient.
+
+---
+
+## 2. Deriving an Incremental Update Rule
+
+Start from the definition:
+
+\[
+Q_{n+1} = \frac{1}{n} \sum_{i=1}^{n} R_i
+\]
+
+Rewrite using the previous estimate:
+
+\[
+\sum_{i=1}^{n-1} R_i = (n-1) Q_n
+\]
+
+Substitute:
+
+\[
+Q_{n+1} = \frac{1}{n}(R_n + (n-1)Q_n)
+\]
+
+This simplifies to:
+
+\[
+Q_{n+1} = Q_n + \frac{1}{n}(R_n - Q_n)
+\]
+
+This requires storing only \( Q_n \) and \( n \).
+
+---
+
+## 3. General Reinforcement Learning Update Form
+
+All incremental RL updates follow the pattern:
+
+\[
+\text{NewEstimate} \leftarrow 
+\text{OldEstimate} +
+\text{StepSize} \cdot (\text{Target} - \text{OldEstimate})
+\]
+
+For sample-average, the step-size is \( \frac{1}{n} \).
+
+---
+
+## 4. Constant Step-Size \( \alpha \)
+
+Frequently, a fixed step-size \( \alpha \in (0,1] \) is used:
+
+\[
+Q_{n+1} = Q_n + \alpha (R_n - Q_n)
+\]
+
+This avoids relying on sample counts and is more flexible.
+
+---
+
+## 5. Exponential Recency-Weighted Average
+
+Expanding the update recursively:
+
+\[
+Q_{n+1}
+= \alpha R_n
++ (1-\alpha)\alpha R_{n-1}
++ (1-\alpha)^2 \alpha R_{n-2}
++ \dots + (1-\alpha)^n Q_1
+\]
+
+Older rewards are exponentially down-weighted.  
+This forms an *exponential moving average*.
+
+---
+
+## 6. Advantages in Nonstationary Problems
+
+For nonstationary environments where reward distributions change over time, exponential forgetting allows the agent to:
+
+- Track recent changes
+- React quickly to shifts in reward patterns
+- Discount outdated information
+
+Thus, constant step-size updates are preferred in nonstationary bandit problems.
+
+
 
 
