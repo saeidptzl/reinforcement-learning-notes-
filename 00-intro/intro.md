@@ -553,7 +553,7 @@ For nonstationary environments where reward distributions change over time, expo
 - React quickly to shifts in reward patterns
 - Discount outdated information
 
-Thus, constant step-size updates are preferred in nonstationary bandit problems.
+Thus, constant step-size updates are preferred in nonstationary bandit problems..
 
 
 
